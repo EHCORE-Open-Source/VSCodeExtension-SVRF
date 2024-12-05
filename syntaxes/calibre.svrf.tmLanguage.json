@@ -1,0 +1,210 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Calibre SVRF",
+	"scopeName": "source.calibre.svrf.basic",
+	"patterns": [
+		{
+            "include": "#comment"
+        },
+		{
+			"include": "#preprocess"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numeric"
+		}
+	],
+	"repository": {
+		"comment": {
+            "patterns": [
+                {
+                    "comment": "block comment",
+                    "name": "comment.block.calibre.svrf.basic",
+                    "begin": "/\\*",
+                    "end": "\\*/",
+                    "patterns": [
+                        {
+                            "match": "\\b(TODO)\\b",
+                            "name": "markup.bold.calibre.svrf.basic"
+                        }
+                    ]
+                },
+                {
+                    "comment": "line comment",
+                    "name": "comment.block.calibre.svrf.basic",
+                    "match": "//(.*)",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "match": "\\b(TODO)\\b",
+                                    "name": "markup.bold.calibre.svrf.basic"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+		"preprocess": {
+            "patterns": [
+                {
+                    "comment": "preprocess directives (define)",
+                    "match": "(#(?i:(?:un)?define))(?:\\s+([[:alpha:]_][[:word:]$]*))?\\b",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.calibre.svrf.preprocess"
+                        },
+                        "2": {
+                            "name": "variable.other.constant.calibre.svrf.preprocess"
+                        }
+                    }
+                },
+                {
+                    "comment": "preprocess directives (if-else)",
+                    "match": "(?:#(?i:ifn?def|else|endif))\\b",
+                    "name": "keyword.control.calibre.svrf.preprocess"
+                },
+                {
+                    "comment": "preprocess directives (pragma)",
+                    "match": "(?i:#pragma)\\b",
+                    "name": "keyword.control.calibre.svrf.preprocess"
+                }
+            ]
+        },
+		"keywords": {
+			"patterns": [
+				{
+					"comment": "Prefix A",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(abut|acute|and|angled?|area|attach))\\b"
+				},
+				{
+					"comment": "Prefix B",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(by))\\b"
+				},
+				{
+					"comment": "Prefix C",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(capacitance|coin(?:cident)?|connect(?:ed)?|convex|copy|corner|cut))\\b"
+				},
+				{
+					"comment": "Prefix D",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(dbclassify|deangle|density|dev(?:ice)?|dfm|direct|disconnect|donut|drawn|drc))\\b"
+				},
+				{
+					"comment": "Prefix E",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(enc(?:los(?:ur)?e)?|erc|ex(?:clude|pand|t(?:en(?:d|ts?)|ernal)?)))\\b"
+				},
+				{
+					"comment": "Prefix F",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(flag|flatten|fracture|fringe))\\b"
+				},
+				{
+					"comment": "Prefix G",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(group|grow))\\b"
+				},
+				{
+					"comment": "Prefix H",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(hcell|holes))\\b"
+				},
+				{
+					"comment": "Prefix I",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(in(?:ductance|side|t(?:er(?:act|nal|secting))?)?))\\b"
+				},
+				{
+					"comment": "Prefix L",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(label|lay(?:er|out)|length|litho|lvs))\\b"
+				},
+				{
+					"comment": "Prefix M",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(magnify|mask|measure|merge))\\b"
+				},
+				{
+					"comment": "Prefix N",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(net|not(?:ch)?))\\b"
+				},
+				{
+					"comment": "Prefix O",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(obtuse|offgrid|opc(?:bias|lineend|sbar)|opposite|or(?:net)?|out(?:side)?|overlap))\\b"
+				},
+				{
+					"comment": "Prefix P",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(para(?:llel|sitic)?|path|per(?:imeter|[cp]|pendicular)|pex|pins|polygon|ports?|precision|proj(?:ecting)?|push))\\b"
+				},
+				{
+					"comment": "Prefix R",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(rectangles?|region|resistance|resolution|ret|rotate))\\b"
+				},
+				{
+					"comment": "Prefix S",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(sbar|sconnect|shift|shrink|singular|size|snap|source|sraf_fill|space|square|stamp|step|svrf))\\b"
+				},
+				{
+					"comment": "Prefix T",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(tddrc|text|title|topex|touch|trace|tvf))\\b"
+				},
+				{
+					"comment": "Prefix U",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(unit))\\b"
+				},
+				{
+					"comment": "Prefix V",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(variable|vertex|virtual))\\b"
+				},
+				{
+					"comment": "Prefix W",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(with))\\b"
+				},
+				{
+					"comment": "Prefix X",
+					"name": "keyword.control.calibre.svrf.basic",
+					"match": "\\b(?i:(xor))\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.calibre.svrf.basic",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.calibre.svrf.basic",
+					"match": "\\\\."
+				}
+			]
+		},
+        "numeric": {
+            "patterns": [
+                {
+                    "comment": "numeric for scientific or symbol notation",
+                    "name": "constant.numeric.calibre.svrf.basic",
+                    "match": "(?:\\b|[+-])[0-9]+(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\\b"
+                }
+            ]
+        }
+	}
+}

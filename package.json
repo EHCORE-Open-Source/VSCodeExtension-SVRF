@@ -1,25 +1,41 @@
 {
-  "name": "calibre-svrf",
-  "displayName": "Calibre SVRF",
-  "description": "MentorGraphics Calibre SVRF extension",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.95.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [{
-      "id": "calibre-svrf",
-      "aliases": ["Calibre SVRF", "calibre-svrf"],
-      "extensions": [".svrf"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "calibre-svrf",
-      "scopeName": "rule.svrf",
-      "path": "./syntaxes/calibre-svrf.tmLanguage.json"
-    }]
-  }
+    "name": "calibre-svrf",
+    "displayName": "Calibre SVRF Extension",
+    "description": "MentorGraphics Calibre SVRF extension",
+    "version": "0.0.1",
+    "publisher": "ephoton0210-taiwan",
+    "private": false,
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/EHCORE-Open-Source/VSCodeExtension-SKILL.git"
+    },
+    "engines": {
+        "vscode": "^1.95.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "calibre-svrf",
+                "aliases": [
+                    "Calibre SVRF",
+                    "calibre-svrf"
+                ],
+                "extensions": [
+                    ".svrf"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "calibre-svrf",
+                "scopeName": "source.calibre.svrf.basic",
+                "path": "./syntaxes/calibre.svrf.tmLanguage.json"
+            }
+        ]
+    }
 }
