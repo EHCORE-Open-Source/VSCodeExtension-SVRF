@@ -57,21 +57,6 @@
                             ]
                         }
                     }
-                },
-                {
-                    "comment": "rule check comment",
-                    "name": "comment.block.calibre.svrf.basic",
-                    "match": "@(.*)",
-                    "captures": {
-                        "1": {
-                            "patterns": [
-                                {
-                                    "match": "\\s(\\x5E[[:word:]]+)\\b",
-                                    "name": "variable.other.constant.calibre.svrf.ruleCheck strong.calibre.svrf.ruleCheck"
-                                }
-                            ]
-                        }
-                    }
                 }
             ]
         },
@@ -120,14 +105,19 @@
         "layer_operation_complex_keywords": {
             "patterns": [
                 {
+                    "comment": "complex layer operation (Prefix NOT? COIN or TOUCH)",
+                    "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
+                    "match": "\\b(?i:((?:not\\s+)?(?:(?:coin(?:cident)?|touch)(?:\\s+(?:in|out)(?:side)?)?\\s+edge|with\\s+(?:edge|neighbor|text|width))))\\b"
+                },
+                {
                     "comment": "complex layer operation (Prefix NOT)",
                     "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
-                    "match": "\\b(?i:(not\\s+(?:angle|area|cut|donut|enclose(?:\\s+rectangle)?|inside\\s+cell|(?:in|out)(?:side)?(?:\\s+edge)?|interact|length|net|rectangle|touch(?:\\s+(?:in|out)(?:side)?)?\\s+edge|touch|with\\s+(?:edge|neighbor|text|width))))\\b"
+                    "match": "\\b(?i:(not\\s+(?:angle|area|cut|donut|enclose(?:\\s+rectangle)?|inside\\s+cell|(?:in|out)(?:side)?(?:\\s+edge)?|interact|length|net|rectangle|touch)))\\b"
                 },
                 {
                     "comment": "complex layer operation (Prefix A-D)",
                     "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
-                    "match": "\\b(?i:((?:not\\s+)?coin(?:cident)?(?:\\s+(?:in|out)(?:side)?)?\\s+edge|convex\\s+edge|density\\s+convolve|device\\s+layer|drawn\\s+(?:acute|angled|offgrid|skew)))\\b"
+                    "match": "\\b(?i:(convex\\s+edge|density\\s+convolve|device\\s+layer|drawn\\s+(?:acute|angled|offgrid|skew)))\\b"
                 },
                 {
                     "comment": "complex layer operation (Prefix E-I)",
@@ -140,7 +130,7 @@
                     "match": "\\b(?i:(net\\s+area(?:\\s+ratio(?:\\s+(?:accumulate|coupled|print))?)?|offgrid\\s+directional|or\\s+edge|parasitic\\s+variation|path\\s+length))\\b"
                 },
                 {
-                    "comment": "complex layer operation (Prefix R)",
+                    "comment": "complex layer operation (Prefix R-W)",
                     "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
                     "match": "\\b(?i:(rectangle\\s+enclosure))\\b"
                 }
@@ -159,9 +149,9 @@
                     "match": "\\b(?i:(length|magnify|merge|net|interact|not|offgrid|or(?:net)?|pathchk|perimeter|pins|ports|push|rectangles?|rotate|shift|shrink|size|snap|stamp))\\b"
                 },
                 {
-                    "comment": "layer operation (Prefix T)",
+                    "comment": "layer operation (Prefix T-X)",
                     "name": "keyword.control.calibre.svrf.basic",
-                    "match": "\\b(?i:(tddrc|topex|touch|))\\b"
+                    "match": "\\b(?i:(tddrc|topex|touch|vertex|xor))\\b"
                 }
             ]
         },
@@ -275,15 +265,46 @@
             ]
         },
         "strings": {
-            "name": "string.quoted.double.calibre.svrf.basic",
-            "begin": "\"",
-            "end": "\"",
             "patterns": [
                 {
-                    "name": "constant.character.escape.calibre.svrf.basic",
-                    "match": "\\\\."
+                    "name": "string.quoted.double.calibre.svrf.basic",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.calibre.svrf.basic",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.calibre.svrf.basic",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.calibre.svrf.basic",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "comment": "rule check comment",
+                    "name": "string.unquoted.rulecheck.calibre.svrf.comment",
+                    "match": "@(.*)",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "match": "\\s(\\x5E[[:word:]]+)\\b",
+                                    "name": "variable.other.constant.calibre.svrf.ruleCheck strong.calibre.svrf.ruleCheck"
+                                }
+                            ]
+                        }
+                    }
                 }
             ]
+            
         },
         "numeric": {
             "patterns": [
