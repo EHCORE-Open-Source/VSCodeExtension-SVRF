@@ -105,12 +105,32 @@
         "layer_operation_complex_keywords": {
             "patterns": [
                 {
-                    "comment": "complex layer operation (Prefix NOT? COIN or TOUCH)",
+                    "comment": "complex layer operation (Keyword DFM Prefix A-D)",
+                    "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
+                    "match": "\\b(?i:(dfm\\s+(?:analyze|caf|circle\\s+(?:a(?:nalyze)?|generate)|classify|cog|contour|copy|create\\s+layer\\s+polygons|critical\\s+area|density|direction|dv(?:\\s+(?:analyze|interact|override))?)))\\b"
+                },
+                {
+                    "comment": "complex layer operation (Keyword DFM Prefix E-P)",
+                    "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
+                    "match": "\\b(?i:(dfm\\s+(?:empty|expand\\s+(?:edge|enclosure)|fill|gca|grow|histogram|jogclean|measure|merge|narac|optimize|or(?:\\s+edge)?|partition|pattern\\s+(?:analyze|capture|classify|cluster|export|filter|import|))))\\b"
+                },
+                {
+                    "comment": "complex layer operation (Keyword DFM Prefix P-R)",
+                    "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
+                    "match": "\\b(?i:(dfm\\s+(?:property(?:\\s+merge|net|select\\s+secondary|singleton)?|puzzle\\s+analyze|rdb(?:\\s+ascii|def|gds|oasis)?|read|rectangles|(?:non\\s+)?redundant\\s+vias|redundant\\s+vias\\s+count|remove\\s+edge)))\\b"
+                },
+                {
+                    "comment": "complex layer operation (Keyword DFM Prefix S-W)",
+                    "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
+                    "match": "\\b(?i:(dfm\\s+(?:segment|select\\s+by\\s+net|shift(?:\\s+edge)?|size|softchk|space|stadium\\s+analyze|stamp|stripe|text|transform|transition|wrap)))\\b"
+                },
+                {
+                    "comment": "complex layer operation (Keyword NOT? COIN or TOUCH)",
                     "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
                     "match": "\\b(?i:((?:not\\s+)?(?:(?:coin(?:cident)?|touch)(?:\\s+(?:in|out)(?:side)?)?\\s+edge|with\\s+(?:edge|neighbor|text|width))))\\b"
                 },
                 {
-                    "comment": "complex layer operation (Prefix NOT)",
+                    "comment": "complex layer operation (Keyword NOT)",
                     "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
                     "match": "\\b(?i:(not\\s+(?:angle|area|cut|donut|enclose(?:\\s+rectangle)?|inside\\s+cell|(?:in|out)(?:side)?(?:\\s+edge)?|interact|length|net|rectangle|touch)))\\b"
                 },
