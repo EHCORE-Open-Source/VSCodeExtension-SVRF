@@ -290,7 +290,7 @@
         "mathematics": {
             "patterns": [
                 {
-                    "begin": "\\b(?i:(ceil|floor|trunc|sqrt|abs|exp|log|sin|cos|tan|min|max))\\(",
+                    "begin": "\\b(?i:(ceil|floor|trunc|sqrt|abs|exp|log|sin|cos|tan|min|max))\\s*\\(",
                     "beginCaptures": {
                         "1": {
                             "name": "entity.name.function.calibre.svrf.math"
@@ -320,7 +320,7 @@
         "device_builtin_functions": {
             "patterns": [
                 {
-                    "begin": "\\b(?i:(area(?:_common)?|bends|count|inst(?:ance)?|named_net|perim(?:eter)?(?:_co(?:incide)?)?(?:_(?:in|out)(?:side)?)?|pin_net|precision|text_(?:num(?:eric)?|str(?:ing)?)|unit_(?:cap(?:acitance)?|len(?:gth)?|res(?:istance)?)|[xy]_loc(?:ation)?))\\(",
+                    "begin": "\\b(?i:(area(?:_common)?|bends|count|inst(?:ance)?|named_net|perim(?:eter)?(?:_co(?:incide)?)?(?:_(?:in|out)(?:side)?)?|pin_net|precision|text_(?:num(?:eric)?|str(?:ing)?)|unit_(?:cap(?:acitance)?|len(?:gth)?|res(?:istance)?)|[xy]_loc(?:ation)?))\\s*\\(",
                     "beginCaptures": {
                         "1": {
                             "name": "entity.name.function.calibre.svrf.device strong.calibre.svrg.property"
