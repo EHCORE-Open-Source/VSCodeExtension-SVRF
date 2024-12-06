@@ -67,7 +67,7 @@
                     "match": "(#(?i:(?:un)?define))(?:\\s+([[:alpha:]_][[:word:]$]*))?\\b",
                     "captures": {
                         "1": {
-                            "name": "variable.other.calibre.svrf.preprocess"
+                            "name": "keyword.control.calibre.svrf.preprocess strong.calibre.svrf.preprocess"
                         },
                         "2": {
                             "name": "variable.other.constant.calibre.svrf.preprocess"
@@ -77,12 +77,12 @@
                 {
                     "comment": "preprocess directives (if-else)",
                     "match": "(?:#(?i:ifn?def|else|endif))\\b",
-                    "name": "variable.other.calibre.svrf.preprocess"
+                    "name": "keyword.control.calibre.svrf.preprocess strong.calibre.svrf.preprocess"
                 },
                 {
                     "comment": "preprocess directives (pragma)",
                     "match": "(?i:#pragma)\\b",
-                    "name": "variable.other.calibre.svrf.preprocess"
+                    "name": "keyword.control.calibre.svrf.preprocess strong.calibre.svrf.preprocess"
                 }
             ]
         },
@@ -90,7 +90,7 @@
             "patterns": [
                 {
                     "comment": "layer operation equation",
-                    "match": "([[:word:]]*)\\s*(=)",
+                    "match": "([[:word:]]+)\\s*(=)",
                     "captures": {
                         "1": {
                             "name": "variable.other.calibre.svrf.basic"
