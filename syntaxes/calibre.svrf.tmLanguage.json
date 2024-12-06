@@ -25,6 +25,9 @@
             "include": "#layer_operation_basic_keywords"
         },
         {
+            "include": "#layer_definition"
+        },
+        {
             "include": "#keywords"
         }
     ],
@@ -64,7 +67,7 @@
             "patterns": [
                 {
                     "comment": "preprocess directives (define)",
-                    "match": "(#(?i:(?:un)?define))(?:\\s+([[:alpha:]_][[:word:]$]*))?\\b",
+                    "match": "(#(?i:(?:(?:un)?define|ifn?def)))(?:\\s+([[:alpha:]_][[:word:]$]*))?\\b",
                     "captures": {
                         "1": {
                             "name": "keyword.control.calibre.svrf.preprocess strong.calibre.svrf.preprocess"
@@ -76,7 +79,7 @@
                 },
                 {
                     "comment": "preprocess directives (if-else)",
-                    "match": "(?:#(?i:ifn?def|else|endif))\\b",
+                    "match": "(#(?i:else|endif))\\b",
                     "name": "keyword.control.calibre.svrf.preprocess strong.calibre.svrf.preprocess"
                 },
                 {
@@ -87,20 +90,16 @@
             ]
         },
         "layer_operation": {
-            "patterns": [
-                {
-                    "comment": "layer operation equation",
-                    "match": "([[:word:]]+)\\s*(=)",
-                    "captures": {
-                        "1": {
-                            "name": "variable.other.calibre.svrf.basic"
-                        },
-                        "2": {
-                            "name": "punctuation.definition.tag.calibre.svrf.equation"
-                        }
-                    }
+            "comment": "layer operation equation",
+            "match": "([[:word:]]+)\\s*(=)",
+            "captures": {
+                "1": {
+                    "name": "variable.other.calibre.svrf.basic"
+                },
+                "2": {
+                    "name": "punctuation.definition.tag.calibre.svrf.equation"
                 }
-            ]
+            }
         },
         "layer_operation_complex_keywords": {
             "patterns": [
@@ -174,6 +173,15 @@
                     "match": "\\b(?i:(tddrc|topex|touch|vertex|xor))\\b"
                 }
             ]
+        },
+        "layer_definition": {
+            "comment": "layer definition",
+            "match": "^\\s*((?i:layer))\\s+(.*)",
+            "captures": {
+                "1": {
+                    "name": "keyword.other.calibre.svrf.layer"
+                }
+            }
         },
         "keywords": {
             "patterns": [
