@@ -37,6 +37,9 @@
             "include": "#layer_definition"
         },
         {
+            "include": "#connectivity_extraction_operation"
+        },
+        {
             "include": "#keywords"
         }
     ],
@@ -163,7 +166,7 @@
         },
         "layer_operation": {
             "comment": "layer operation equation",
-            "match": "([[:word:]]+)\\s*(=)",
+            "match": "([[:word:]]+)\\s*(=)[^=]",
             "captures": {
                 "1": {
                     "name": "variable.other.calibre.svrf.basic"
@@ -352,6 +355,11 @@
                     ]
                 }
             ]
+        },
+        "connectivity_extraction_operation": {
+            "comment": "connectivity extraction operation",
+            "match": "\\b(?i:(s?connect))\\b",
+            "name": "keyword.control.less"
         },
         "keywords": {
             "patterns": [
