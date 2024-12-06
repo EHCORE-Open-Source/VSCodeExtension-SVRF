@@ -175,13 +175,45 @@
             ]
         },
         "layer_definition": {
-            "comment": "layer definition",
-            "match": "^\\s*((?i:layer))\\s+(.*)",
-            "captures": {
-                "1": {
-                    "name": "keyword.other.calibre.svrf.layer"
+            "patterns": [
+                {
+                    "comment": "layer map",
+                    "match": "^\\s*(?i:(layer)(?:\\s+(map(\\s+[[:digit:]]+(\\s+datatype(\\s+[[:digit:]]+)?)?)?)))",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.calibre.svrf.layer"
+                        },
+                        "2": {
+                            "name": "keyword.other.calibre.svrf.layer markup.underline.calibre.svrf.layermap"
+                        },
+                        "3": {
+                            "name": "markup.underline.calibre.svrf.layermap",
+                            "patterns": [
+                                {
+                                    "include": "#numeric"
+                                },
+                                {
+                                    "comment": "layer datatype",
+                                    "match": "((?i:datatype))",
+                                    "name": "keyword.other.calibre.svrf.layer"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "layer definition",
+                    "match": "^\\s*((?i:layer))(?:\\s+([[:alpha:]_][[:word:]$]*))?",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.calibre.svrf.layer"
+                        },
+                        "2": {
+                            "name": "variable.name.calibre.svrf.layer"
+                        }
+                    }
                 }
-            }
+            ]
         },
         "keywords": {
             "patterns": [
