@@ -16,6 +16,9 @@
             "include": "#preprocess"
         },
         {
+            "include": "#mathematics"
+        },
+        {
             "include": "#variable"
         },
         {
@@ -63,6 +66,57 @@
                             ]
                         }
                     }
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.calibre.svrf.basic",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.calibre.svrf.basic",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.calibre.svrf.basic",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.calibre.svrf.basic",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "comment": "rule check comment",
+                    "name": "string.unquoted.rulecheck.calibre.svrf.comment",
+                    "match": "@(.*)",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "match": "\\s(\\x5E[[:word:]]+)\\b",
+                                    "name": "variable.other.constant.calibre.svrf.ruleCheck strong.calibre.svrf.ruleCheck"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+            
+        },
+        "numeric": {
+            "patterns": [
+                {
+                    "comment": "numeric for scientific or symbol notation",
+                    "name": "constant.numeric.calibre.svrf.basic",
+                    "match": "(?:\\b|[+-])[0-9]+(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\\b"
                 }
             ]
         },
@@ -230,6 +284,36 @@
                 }
             ]
         },
+        "mathematics": {
+            "patterns": [
+                {
+                    "begin": "\\b(?i:(ceil|floor|trunc|sqrt|abs|exp|log|sin|cos|tan|min|max))\\(",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.function.calibre.svrf.math strong.calibre.svrf.math"
+                        }
+                    },
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "include": "#comment"
+                        },
+                        {
+                            "include": "#strings"
+                        },
+                        {
+                            "include": "#numeric"
+                        },
+                        {
+                            "include": "#preprocess"
+                        },
+                        {
+                            "include": "#mathematics"
+                        }
+                    ]
+                }
+            ]
+        },
         "keywords": {
             "patterns": [
                 {
@@ -336,57 +420,6 @@
                     "comment": "Prefix X",
                     "name": "keyword.other.calibre.svrf.basic",
                     "match": "\\b(?i:(xor))\\b"
-                }
-            ]
-        },
-        "strings": {
-            "patterns": [
-                {
-                    "name": "string.quoted.double.calibre.svrf.basic",
-                    "begin": "\"",
-                    "end": "\"",
-                    "patterns": [
-                        {
-                            "name": "constant.character.escape.calibre.svrf.basic",
-                            "match": "\\\\."
-                        }
-                    ]
-                },
-                {
-                    "name": "string.quoted.single.calibre.svrf.basic",
-                    "begin": "'",
-                    "end": "'",
-                    "patterns": [
-                        {
-                            "name": "constant.character.escape.calibre.svrf.basic",
-                            "match": "\\\\."
-                        }
-                    ]
-                },
-                {
-                    "comment": "rule check comment",
-                    "name": "string.unquoted.rulecheck.calibre.svrf.comment",
-                    "match": "@(.*)",
-                    "captures": {
-                        "1": {
-                            "patterns": [
-                                {
-                                    "match": "\\s(\\x5E[[:word:]]+)\\b",
-                                    "name": "variable.other.constant.calibre.svrf.ruleCheck strong.calibre.svrf.ruleCheck"
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-            
-        },
-        "numeric": {
-            "patterns": [
-                {
-                    "comment": "numeric for scientific or symbol notation",
-                    "name": "constant.numeric.calibre.svrf.basic",
-                    "match": "(?:\\b|[+-])[0-9]+(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\\b"
                 }
             ]
         }
