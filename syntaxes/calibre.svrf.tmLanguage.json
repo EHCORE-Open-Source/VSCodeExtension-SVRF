@@ -16,6 +16,9 @@
             "include": "#preprocess"
         },
         {
+            "include": "#variable"
+        },
+        {
             "include": "#layer_operation"
         },
         {
@@ -73,7 +76,7 @@
                             "name": "keyword.control.calibre.svrf.preprocess strong.calibre.svrf.preprocess"
                         },
                         "2": {
-                            "name": "variable.other.constant.calibre.svrf.preprocess"
+                            "name": "variable.name.constant.calibre.svrf.preprocess"
                         }
                     }
                 },
@@ -88,6 +91,18 @@
                     "name": "keyword.control.calibre.svrf.preprocess strong.calibre.svrf.preprocess"
                 }
             ]
+        },
+        "variable": {
+            "comment": "variable declare",
+            "match": "^\\s*(?i:(variable)(?:\\s+([[:alpha:]_][[:word:]$]*))?)\\b",
+            "captures": {
+                "1": {
+                    "name": "keyword.other.calibre.svrf.variable"
+                },
+                "2": {
+                    "name": "variable.name.calibre.svrf.basic"
+                }
+            }
         },
         "layer_operation": {
             "comment": "layer operation equation",
