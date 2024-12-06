@@ -120,28 +120,48 @@
         "layer_operation_complex_keywords": {
             "patterns": [
                 {
+                    "comment": "complex layer operation (Prefix NOT)",
+                    "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
+                    "match": "\\b(?i:(not\\s+(?:angle|area|cut|donut|enclose(?:\\s+rectangle)?|inside\\s+cell|(?:in|out)(?:side)?(?:\\s+edge)?|interact|length|net|rectangle|touch(?:\\s+(?:in|out)(?:side)?)?\\s+edge|touch|with\\s+(?:edge|neighbor|text|width))))\\b"
+                },
+                {
                     "comment": "complex layer operation (Prefix A-D)",
                     "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
-                    "match": "\\b(?i:(coin(?:cident)?(?:\\s+(?:in|out)(?:side)?)?\\s+edge|convex\\s+edge|density\\s+convolve|device\\s+layer|drawn\\s+(?:acute|angled|offgrid|skew)))\\b"
+                    "match": "\\b(?i:((?:not\\s+)?coin(?:cident)?(?:\\s+(?:in|out)(?:side)?)?\\s+edge|convex\\s+edge|density\\s+convolve|device\\s+layer|drawn\\s+(?:acute|angled|offgrid|skew)))\\b"
+                },
+                {
+                    "comment": "complex layer operation (Prefix E-I)",
+                    "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
+                    "match": "\\b(?i:(enclose\\s+rectangle|expand\\s+(?:edge|text)|extent\\s+(?:cell|drawn)|inductance\\s+micheck|(?:in|out)(?:side)?\\s+edge|inside\\s+cell))\\b"
+                },
+                {
+                    "comment": "complex layer operation (Prefix N-P)",
+                    "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
+                    "match": "\\b(?i:(net\\s+area(?:\\s+ratio(?:\\s+(?:accumulate|coupled|print))?)?|offgrid\\s+directional|or\\s+edge|parasitic\\s+variation|path\\s+length))\\b"
+                },
+                {
+                    "comment": "complex layer operation (Prefix R)",
+                    "name": "keyword.control.calibre.svrf.basic markup.underline.calibre.svrf.basic",
+                    "match": "\\b(?i:(rectangle\\s+enclosure))\\b"
                 }
             ]
         },
         "layer_operation_basic_keywords": {
             "patterns": [
                 {
-                    "comment": "layer operation (Prefix A-D)",
+                    "comment": "layer operation (Prefix A-I)",
                     "name": "keyword.control.calibre.svrf.basic",
-                    "match": "\\b(?i:(and|(?:de)?angle|area|coin(?:cident)?(?:\\s+(?:in|out)(?:side)?)?\\s+edge|convex\\s+edge|copy|cut|density(?:\\s+convolve)?|device\\s+layer|donut|drawn\\s+(?:acute|angled|offgrid|skew)))\\b"
+                    "match": "\\b(?i:(and|(?:de)?angle|area|copy|cut|density|donut|enclose|enc(?:losure)?|extents?|ext(?:ernal)?|flatten|grow|holes|(?:in|out)(?:side)?|interact|int(?:ernal)?))\\b"
                 },
                 {
-                    "comment": "layer operation (Prefix E-I)",
+                    "comment": "layer operation (Prefix L-S)",
                     "name": "keyword.control.calibre.svrf.basic",
-                    "match": "\\b(?i:(enclose(?:\\s+rectangle)?|enc(?:losure)?|expand\\s+(?:edge|text)|extent(?:\\s+(?:cell|drawn))?|extents|ext(?:ernal)?|flatten|grow|holes|inductance\\s+micheck|in(?:side)?(?:\\s+edge)?|inside\\s+cell|interact|int(?:ernal)?))\\b"
+                    "match": "\\b(?i:(length|magnify|merge|net|interact|not|offgrid|or(?:net)?|pathchk|perimeter|pins|ports|push|rectangles?|rotate|shift|shrink|size|snap|stamp))\\b"
                 },
                 {
-                    "comment": "layer operation (Prefix L)",
+                    "comment": "layer operation (Prefix T)",
                     "name": "keyword.control.calibre.svrf.basic",
-                    "match": "\\b(?i:(length|magnify|merge|net(?:\\s+area(?:\\s+ratio(?:\\s+(?:accumulate|coupled|print))?)?|interact)?|not|offgrid(?:\\s+directional)?))\\b"
+                    "match": "\\b(?i:(tddrc|topex|touch|))\\b"
                 }
             ]
         },
