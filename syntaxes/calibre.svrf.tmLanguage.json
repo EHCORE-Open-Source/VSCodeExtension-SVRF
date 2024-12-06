@@ -19,6 +19,9 @@
             "include": "#mathematics"
         },
         {
+            "include": "#device_builtin_functions"
+        },
+        {
             "include": "#variable"
         },
         {
@@ -309,6 +312,42 @@
                         },
                         {
                             "include": "#mathematics"
+                        }
+                    ]
+                }
+            ]
+        },
+        "device_builtin_functions": {
+            "patterns": [
+                {
+                    "begin": "\\b(?i:(area(?:_common)?|bends|count|inst(?:ance)?|named_net|perim(?:eter)?(?:_co(?:incide)?)?(?:_(?:in|out)(?:side)?)?|pin_net|precision|text_(?:num(?:eric)?|str(?:ing)?)|unit_(?:cap(?:acitance)?|len(?:gth)?|res(?:istance)?)|[xy]_loc(?:ation)?))\\(",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.function.calibre.svrf.device strong.calibre.svrg.property"
+                        }
+                    },
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "include": "#comment"
+                        },
+                        {
+                            "include": "#strings"
+                        },
+                        {
+                            "include": "#numeric"
+                        },
+                        {
+                            "include": "#preprocess"
+                        },
+                        {
+                            "include": "#mathematics"
+                        },
+                        {
+                            "include": "#device_builtin_functions"
+                        },
+                        {
+                            "include": "#keywords"
                         }
                     ]
                 }
