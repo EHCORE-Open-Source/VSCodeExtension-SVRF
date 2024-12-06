@@ -290,7 +290,7 @@
                     "begin": "\\b(?i:(ceil|floor|trunc|sqrt|abs|exp|log|sin|cos|tan|min|max))\\(",
                     "beginCaptures": {
                         "1": {
-                            "name": "entity.name.function.calibre.svrf.math strong.calibre.svrf.math"
+                            "name": "entity.name.function.calibre.svrf.math"
                         }
                     },
                     "end": "\\)",
