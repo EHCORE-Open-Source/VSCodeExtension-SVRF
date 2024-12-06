@@ -358,8 +358,16 @@
         },
         "connectivity_extraction_operation": {
             "comment": "connectivity extraction operation",
-            "match": "\\b(?i:(s?connect))\\b",
-            "name": "keyword.control.less"
+            "match": "\\b(?i:(s?connect))(?:\\s+([[:alpha:]_][[:word:]$]*)(?:\\s+([[:alpha:]_][[:word:]$]*))?)?\\b",
+            "name": "keyword.control.calibre.svrf.connectivity",
+            "captures": {
+                "2": {
+                    "name": "variable.name.calibre.svrf.basic strong.calibre.svrf.connectivity"
+                },
+                "3": {
+                    "name": "variable.name.calibre.svrf.basic"
+                }
+            }
         },
         "keywords": {
             "patterns": [
