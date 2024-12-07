@@ -417,6 +417,11 @@
                     }
                 },
                 {
+                    "comment": "specification statement selection (LAYOUT SYSTEM)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+system\\s+)(gds(?:2|ii)?|oasis|spice|lefdef|openaccess|oa|cnet|ascii|mfg)\\b)"
+                },
+                {
                     "comment": "specification statement (MASK)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(mask\\s+svdb\\s+directory))\\b"
