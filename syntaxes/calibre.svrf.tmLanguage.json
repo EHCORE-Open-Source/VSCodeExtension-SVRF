@@ -422,6 +422,55 @@
                     "match": "(?i:(?<=^\\s*layout\\s+system\\s+)(gds(?:2|ii)?|oasis|spice|lefdef|openaccess|oa|cnet|ascii|mfg)\\b)"
                 },
                 {
+                    "comment": "specification statement selection (LAYOUT SYSTEM2)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+system\\s+)(gds(?:2|ii)?|oasis|lefdef|openaccess|oa|mfg)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT USE DATABASE PRECISION)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+use\\s+database\\s+precision\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT WINDEL CELL)",
+                    "match": "(?i:(?<=^\\s*layout\\s+windel\\s+cell\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(list|hier(?:\\s+preserve)?|by\\s+layer|primary|original(?:\\s+occupied)?|halo))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT WINDOW CELL)",
+                    "match": "(?i:(?<=^\\s*layout\\s+window\\s+cell\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(list|halo(?:\\s+over)?|original(?:\\s+occupied)?|by\\s+layer|primary))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT WINDOW CLIP)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+window\\s+clip\\s+)(no|yes)\\b)"
+                },
+                {
                     "comment": "specification statement (MASK)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(mask\\s+svdb\\s+directory))\\b"
