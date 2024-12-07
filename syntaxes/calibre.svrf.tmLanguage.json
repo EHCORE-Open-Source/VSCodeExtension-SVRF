@@ -775,6 +775,28 @@
                     "match": "^\\s*(?i:(include))\\b"
                 },
                 {
+                    "comment": "specification statement (LAYER)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(layer(?:\\s+(?:directory|map|resolution))?))\\b"
+                },
+                {
+                    "comment": "specification statement selection (LAYER MAP)",
+                    "match": "(?i:(?<=^\\s*layer\\s+map\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:((?:data|text)type))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
                     "comment": "specification statement (LAYOUT prefix A-C)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(layout\\s+(?:allow\\s+duplicate\\s+cells?|base\\s+(?:cell|layer)|bump2|case|cell\\s+list|clone\\s+(?:by\\s+(?:layer|polygon)|(?:rotated|transformed)\\s+placements)|convert\\s+circle)))\\b"
