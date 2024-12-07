@@ -386,6 +386,48 @@
                             "name": "variable.name.calibre.svrf.statement"
                         }
                     }
+                },
+                {
+                    "comment": "specification statement (VIRTUAL CONNECT)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(virtual\\s+connect\\s+(?:box\\s+(?:colon|name)|colon|depth|incremental|name|report(?:\\s+maximum)?|semicolon\\s+as\\s+colon)))\\b"
+                },
+                {
+                    "comment": "specification statement selection (VIRTUAL CONNECT (BOX)? COLON)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*virtual\\s+connect(?:\\s+box)?\\s+colon\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (VIRTUAL CONNECT DEPTH)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*virtual\\s+connect\\s+depth\\s+)(primary|all)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (VIRTUAL CONNECT INCREMENTAL)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*virtual\\s+connect\\s+incremental\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (VIRTUAL CONNECT REPORT)",
+                    "match": "(?i:(?<=^\\s*virtual\\s+connect\\s+report\\s+)(no|yes(?:\\s+(unsatisfied))?))",
+                    "captures": {
+                        "1": {
+                            "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                        },
+                        "2": {
+                            "name": "keyword.other.calibre.svrf.statement.keywords"
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (VIRTUAL CONNECT REPORT MAXIMUM)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*virtual\\s+connect\\s+report\\s+maximum\\s+)(all)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (VIRTUAL CONNECT SEMICOLON AS COLON)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*virtual\\s+connect\\s+semicolon\\s+as\\s+colon\\s+)(no|yes)\\b)"
                 }
             ]
         },
