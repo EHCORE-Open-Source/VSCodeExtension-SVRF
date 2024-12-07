@@ -240,6 +240,41 @@
                     "match": "(?i:(?<=^\\s*layout\\s+ignore\\s+layer\\s+)(inverse)\\b)"
                 },
                 {
+                    "comment": "specification statement (MASK)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(mask\\s+svdb\\s+directory))\\b"
+                },
+                {
+                    "comment": "specification statement selection (MASK SVDB DIRECTORY)",
+                    "match": "(?i:(?<=^\\s*mask\\s+svdb\\s+directory)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#comment"
+                                },
+                                {
+                                    "include": "#strings"
+                                },
+                                {
+                                    "include": "#numeric"
+                                },
+                                {
+                                    "include": "#preprocess"
+                                },
+                                {
+                                    "comment": "specification statement keywords (MASK SVDB DIRECTORY)",
+                                    "match": "\\b(?i:(query|cci|(?:no)?pinloc|xrc|xact|nopexpcells|recon|si|annotate\\s+devices|[in]xf|phdb|gdsii|xdb|dv|slph|netlist|noflat|by\\s+gate|omn|muwdb|xforms))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                },
+                                {
+                                    "include": "#keywords"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
                     "comment": "specification statement (SNAP)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(snap\\s+offgrid))\\b"
