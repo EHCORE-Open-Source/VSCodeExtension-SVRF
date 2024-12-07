@@ -744,6 +744,37 @@
                     "match": "(?i:(?<=^\\s*flag\\s+nonsimple(?:\\s+(?:path|polygon))?\\s+)(no|yes)\\b)"
                 },
                 {
+                    "comment": "specification statement (GROUP)",
+                    "name": "keyword.other.calibre.svrf.statement",
+                    "match": "^\\s*(?i:(group))\\b"
+                },
+                {
+                    "comment": "specification statement selection (GROUP name)",
+                    "match": "(?i:(?<=^\\s*group\\s+)([[:alpha:]_][[:word:]$]*)\\b(.*))",
+                    "captures": {
+                        "1": {
+                            "name": "variable.name.calibre.svrf.statement"
+                        },
+                        "2": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement (HCELL)",
+                    "name": "keyword.other.calibre.svrf.statement",
+                    "match": "^\\s*(?i:(hcell))\\b"
+                },
+                {
+                    "comment": "specification statement (INCLUDE)",
+                    "name": "keyword.other.calibre.svrf.statement",
+                    "match": "^\\s*(?i:(include))\\b"
+                },
+                {
                     "comment": "specification statement (LAYOUT prefix A-C)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(layout\\s+(?:allow\\s+duplicate\\s+cells?|base\\s+(?:cell|layer)|bump2|case|cell\\s+list|clone\\s+(?:by\\s+(?:layer|polygon)|(?:rotated|transformed)\\s+placements)|convert\\s+circle)))\\b"
