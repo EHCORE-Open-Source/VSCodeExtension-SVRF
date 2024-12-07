@@ -22,7 +22,7 @@
             "include": "#device_builtin_functions"
         },
         {
-            "include": "#variable"
+            "include": "#specification_statement"
         },
         {
             "include": "#layer_operation"
@@ -163,6 +163,118 @@
                     "name": "variable.name.calibre.svrf.basic"
                 }
             }
+        },
+        "specification_statement": {
+            "patterns": [
+                {
+                    "comment": "specification statement (SNAP)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(snap\\s+offgrid))\\b"
+                },
+                {
+                    "comment": "specification statement selection (SNAP OFFGRID)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*snap\\s+offgrid\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement (SOURCE)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(source\\s+(?:case|path|primary|system)))\\b"
+                },
+                {
+                    "comment": "specification statement selection (SOURCE CASE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*source\\s+case\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (SOURCE SYSTEM)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*source\\s+system\\s+)(cnet|spice)\\b)"
+                },
+                {
+                    "comment": "specification statement (SVRF)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(svrf\\s+(?:(?:dbdiff|fdi)\\s+options|error|message|property|version)))\\b"
+                },
+                {
+                    "comment": "specification statement selection (SVRF PROPERTY)",
+                    "match": "(?i:(?<=^\\s*svrf\\s+property\\s+)[[:alpha:]_][[:word:]$]*\\s+(exact|sub|super))\\b",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.calibre.svrf.svrfproperty"
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement (TEXT)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(text(?:\\s+(?:depth|layer|print(?:\\s+maximum)?))?))\\b"
+                },
+                {
+                    "comment": "specification statement selection (TEXT DEPTH)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*text\\s+depth\\s+)(primary|all)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (TEXT PRINT)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*text\\s+print\\s+)(all|user|pseudo)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (TEXT PRINT MAXIMUM)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*text\\s+print\\s+maximum\\s+)(all)\\b)"
+                },
+                {
+                    "comment": "specification statement (TITLE)",
+                    "name": "keyword.other.calibre.svrf.statement",
+                    "match": "^\\s*(?i:(title))\\b"
+                },
+                {
+                    "comment": "specification statement (TRACE)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(trace\\s+property))\\b"
+                },
+                {
+                    "comment": "specification statement (UNIT)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(unit\\s+(?:cap(?:actiance)?|inductance|length|res(?:istance)?)))\\b"
+                },
+                {
+                    "comment": "specification statement selection (UNIT CAPACITANCE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*unit\\s+cap(?:actiance)?\\s+)((?:meg|[afpnumkgt])?f)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (UNIT INDUCTANCE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*unit\\s+inductance\\s+)((?:meg|[afpnumkgt])?h)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (UNIT RESISTANCE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*unit\\s+res(?:istance)?\\s+)((?:meg|[afpnumkgt])?ohm)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (UNIT LENGTH)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*unit\\s+length\\s+)(mil|[cm]?m|inch|u)\\b)"
+                },
+                {
+                    "comment": "specification statement (VARIABLE)",
+                    "name": "keyword.other.calibre.svrf.statement",
+                    "match": "^\\s*(?i:(variable))\\b"
+                },
+                {
+                    "comment": "specification statement selection (VARIABLE name)",
+                    "match": "(?i:(?<=^\\s*variable\\s+)([[:alpha:]_][[:word:]$]*)\\b)",
+                    "captures": {
+                        "1": {
+                            "name": "variable.name.calibre.svrf.statement"
+                        }
+                    }
+                }
+            ]
         },
         "layer_operation": {
             "comment": "layer operation equation",
