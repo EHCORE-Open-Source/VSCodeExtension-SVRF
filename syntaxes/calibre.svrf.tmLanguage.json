@@ -185,7 +185,7 @@
                 }
             ]
         },
-        "specification_statement_include": {
+        "basic_include": {
             "patterns": [
                 {
                     "include": "#comment"
@@ -243,7 +243,7 @@
                         "2": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(?:cell\\s+space|xform|all))\\b",
@@ -265,7 +265,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(gds(?:2|ii)?|oasis|ascii|maximum\\s+(?:results|vertices|pitch)|all|texttag|prefix|append|layername|user(?:\\s+merged)?|pseude|top|combine|properties|prec|index(?:\\s+noview)?|mag[xy]?|a(?:uto)?ref|substitute))\\b",
@@ -282,7 +282,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(comments|all|rfi|none))\\b",
@@ -299,7 +299,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(?:(intersecting)(?:\\s+(no|yes))?|(file\\s+prefix|inside\\s+of\\s+layer\\s+filter)))\\b",
@@ -351,7 +351,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:([xy]|place))\\b",
@@ -378,7 +378,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(ignore))\\b",
@@ -395,7 +395,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(estimate|all))\\b",
@@ -412,7 +412,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(print\\s+also|all))\\b",
@@ -429,7 +429,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(all))\\b",
@@ -446,7 +446,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(all))\\b",
@@ -463,7 +463,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(?:(detailed)(?:\\s+(no|yes))?|(file\\s+prefix)))\\b",
@@ -495,7 +495,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(recon_(?:default|density|offgrid|connect|dv|mp|pm)))\\b",
@@ -538,7 +538,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(replace|append|hier|executed))\\b",
@@ -555,7 +555,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(empty))\\b",
@@ -585,7 +585,7 @@
                         "2": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(?:cell\\s+space|xform|all))\\b",
@@ -602,7 +602,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(comments|all|rfi|none))\\b",
@@ -624,7 +624,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(all))\\b",
@@ -641,7 +641,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(bipolar|capacitor|diode))\\b",
@@ -658,7 +658,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(polygons(?:\\s+nets)?|nets|by\\s+(?:layer|cell)|flat|ports\\s+also|nofloat|break\\s+filtered|exclude\\s+(?:unused|supply)))\\b",
@@ -679,7 +679,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(ascii|pseduo|top))\\b",
@@ -696,7 +696,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(abort\\s+lvs))\\b",
@@ -713,7 +713,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(replace|append|hier))\\b",
@@ -758,7 +758,7 @@
                         "2": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 }
                             ]
                         }
@@ -846,7 +846,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(database(?:\\s+rules)?|rules|by\\s+layer))\\b",
@@ -863,7 +863,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(by\\s+(?:cell|layer|exception)|(?:top|cell)\\s+space|exit\\s+nonempty|mag))\\b",
@@ -880,7 +880,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(rdb))\\b",
@@ -897,7 +897,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(auto))\\b",
@@ -919,7 +919,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(stdin))\\b",
@@ -936,7 +936,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(gds(?:ii|2)?|oasis|empty))\\b",
@@ -963,7 +963,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(replace|append))\\b",
@@ -990,7 +990,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(by\\s+layer|to|cell\\s+list|database|rules|database\\s+rules))\\b",
@@ -1022,7 +1022,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(list|hier(?:\\s+preserve)?|by\\s+layer|primary|original(?:\\s+occupied)?|halo))\\b",
@@ -1039,7 +1039,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
                                     "match": "\\b(?i:(list|halo(?:\\s+over)?|original(?:\\s+occupied)?|by\\s+layer|primary))\\b",
@@ -1061,20 +1061,16 @@
                 },
                 {
                     "comment": "specification statement selection (MASK SVDB DIRECTORY)",
-                    "match": "(?i:(?<=^\\s*mask\\s+svdb\\s+directory)(.*))",
+                    "match": "(?i:(?<=^\\s*mask\\s+svdb\\s+directory\\b)(.*))",
                     "captures": {
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#specification_statement_include"
+                                    "include": "#basic_include"
                                 },
                                 {
-                                    "comment": "specification statement keywords (MASK SVDB DIRECTORY)",
                                     "match": "\\b(?i:(query|cci|(?:no)?pinloc|xrc|xact|nopexpcells|recon|si|annotate\\s+devices|[in]xf|phdb|gdsii|xdb|dv|slph|netlist|noflat|by\\s+gate|omn|muwdb|xforms))\\b",
                                     "name": "keyword.other.calibre.svrf.statement.keywords"
-                                },
-                                {
-                                    "include": "#keywords"
                                 }
                             ]
                         }
@@ -1430,17 +1426,50 @@
             ]
         },
         "connectivity_extraction_operation": {
-            "comment": "connectivity extraction operation",
-            "match": "\\b(?i:(s?connect))(?:\\s+([[:alpha:]_][[:word:]$]*)(?:\\s+([[:alpha:]_][[:word:]$]*))?)?\\b",
-            "name": "keyword.control.calibre.svrf.connectivity",
-            "captures": {
-                "2": {
-                    "name": "variable.name.calibre.svrf.basic strong.calibre.svrf.connectivity"
+            "patterns": [
+                {
+                    "comment": "connectivity extraction operation (CONNECT or SCONNECT)",
+                    "match": "\\b(?i:(s?connect))(?:\\s+([[:alpha:]_][[:word:]$]*)(?:\\s+([[:alpha:]_][[:word:]$]*))?)?\\b",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.calibre.svrf.connectivity"
+                        },
+                        "2": {
+                            "name": "variable.name.calibre.svrf.basic strong.calibre.svrf.connectivity"
+                        },
+                        "3": {
+                            "name": "variable.name.calibre.svrf.basic"
+                        }
+                    }
                 },
-                "3": {
-                    "name": "variable.name.calibre.svrf.basic"
+                {
+                    "comment": "connectivity extraction operation (LABEL ORDER)",
+                    "match": "\\b(?i:(label\\s+order))\\b",
+                    "name": "keyword.control.calibre.svrf.connectivity",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.calibre.svrf.connectivity"
+                        }
+                    }
+                },
+                {
+                    "comment": "connectivity extraction operation selection (LABEL ORDER)",
+                    "match": "(?i:(?<=^\\s*label\\s+order\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(direct|mask|direct\\s+mask))\\b",
+                                    "name": "keyword.other.calibre.svrf.connectivity.keywords"
+                                }
+                            ]
+                        }
+                    }
                 }
-            }
+            ]
         },
         "keywords": {
             "patterns": [
