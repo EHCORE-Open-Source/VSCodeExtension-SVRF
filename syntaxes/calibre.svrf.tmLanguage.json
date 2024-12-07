@@ -152,18 +152,6 @@
                 }
             ]
         },
-        "variable": {
-            "comment": "variable declare",
-            "match": "^\\s*(?i:(variable)(?:\\s+([[:alpha:]_][[:word:]$]*))?)\\b",
-            "captures": {
-                "1": {
-                    "name": "keyword.other.calibre.svrf.variable"
-                },
-                "2": {
-                    "name": "variable.name.calibre.svrf.basic"
-                }
-            }
-        },
         "specification_statement": {
             "patterns": [
                 {
