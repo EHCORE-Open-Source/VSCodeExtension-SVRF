@@ -291,12 +291,12 @@
                 {
                     "comment": "specification statement (UNIT)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
-                    "match": "^\\s*(?i:(unit\\s+(?:cap(?:actiance)?|inductance|length|res(?:istance)?)))\\b"
+                    "match": "^\\s*(?i:(unit\\s+(?:cap(?:acitance)?|inductance|length|res(?:istance)?|time)))\\b"
                 },
                 {
                     "comment": "specification statement selection (UNIT CAPACITANCE)",
                     "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
-                    "match": "(?i:(?<=^\\s*unit\\s+cap(?:actiance)?\\s+)((?:meg|[afpnumkgt])?f)\\b)"
+                    "match": "(?i:(?<=^\\s*unit\\s+cap(?:acitance)?\\s+)((?:meg|[afpnumkgt])?f)\\b)"
                 },
                 {
                     "comment": "specification statement selection (UNIT INDUCTANCE)",
@@ -307,6 +307,11 @@
                     "comment": "specification statement selection (UNIT RESISTANCE)",
                     "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "(?i:(?<=^\\s*unit\\s+res(?:istance)?\\s+)((?:meg|[afpnumkgt])?ohm)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (UNIT TIME)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*unit\\s+time\\s+)((?:meg|[afpnumkgt])?s)\\b)"
                 },
                 {
                     "comment": "specification statement selection (UNIT LENGTH)",
