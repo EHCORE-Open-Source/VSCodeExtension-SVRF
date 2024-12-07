@@ -155,6 +155,71 @@
         "specification_statement": {
             "patterns": [
                 {
+                    "comment": "specification statement (LAYOUT prefix A-C)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(layout\\s+(?:allow\\s+duplicate\\s+cells?|base\\s+(?:cell|layer)|bump2|case|cell\\s+list|clone\\s+(?:by\\s+(?:layer|polygon)|(?:rotated|transformed)\\s+placements)|convert\\s+circle)))\\b"
+                },
+                {
+                    "comment": "specification statement (LAYOUT IGNORE TEXT CELL LIST)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(layout\\s+ignore\\s+text\\s+cell\\s+list))\\b"
+                },
+                {
+                    "comment": "specification statement (LAYOUT prefix D-M)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(layout\\s+(?:depth|(?:dummy|fill|multigon|path)\\s+layer|error\\s+on\\s+input|ignore\\s+(?:layer|text)|input\\s+exception\\s+(?:rdb|severity)|magnify|merge\\s+on\\s+input)))\\b"
+                },
+                {
+                    "comment": "specification statement (LAYOUT prefix N-P)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(layout\\s+(?:net\\s+list|path2|path(?:\\s+(?:extension|width)\\s+multiple)?|place\\s+cell|placement\\s+multiple|polygon|precision|preserve(?:(?:\\s+(?:net|property))?\\s+case|\\s+cell\\s+list))))\\b"
+                },
+                {
+                    "comment": "specification statement (LAYOUT prefix P-T)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(layout\\s+(?:primary2?|process\\s+(?:box|node)\\s+record|property\\s+(?:audit|text(?:\\s+oasis)?)|rename\\s+(?:all|cell|clone|icv|text(?:\\s+order)?)|system2?|text(?:\\s+file)?|top\\s+layer)))\\b"
+                },
+                {
+                    "comment": "specification statement (LAYOUT prefix U)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(layout\\s+(?:use\\s+database\\s+precision|windel(?:\\s+(?:cell|layer))?|window(?:\\s+(?:cell|clip|layer))?)))\\b"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT ALLOW DUPLICATE CELL[S])",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+allow\\s+duplicate\\s+cells?\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT CASE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+case\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT CLONE ROTATED/TRANSFORMED PLACEMENTS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+clone\\s+(?:rotated|transformed)\\s+placements\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT CONVERT CIRCLE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+convert\\s+circle\\s+)(auto)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT DEPTH)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+depth\\s+)(all|primary)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT ERROR ON INPUT)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+error\\s+on\\s+input\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT IGNORE LAYER)",
+                    "name": "keyword.other.calibre.svrf.statement",
+                    "match": "(?i:(?<=^\\s*layout\\s+ignore\\s+layer\\s+)(inverse)\\b)"
+                },
+                {
                     "comment": "specification statement (SNAP)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(snap\\s+offgrid))\\b"
