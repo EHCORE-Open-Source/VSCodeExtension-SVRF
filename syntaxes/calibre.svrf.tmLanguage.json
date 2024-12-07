@@ -171,6 +171,132 @@
         "specification_statement": {
             "patterns": [
                 {
+                    "comment": "specification statement (DRC prefix A-I)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(drc\\s+(?:auto\\s+error|boolean\\s+nosnap45|cell\\s+(?:name|text)|check\\s+(?:map|text)|density|exclude\\s+(?:false(?:\\s+notch)?)|extend\\s+trivial\\s+edge|incremental\\s+connect(?:\\s+warning)?)))\\b"
+                },
+                {
+                    "comment": "specification statement (DRC prefix K-M)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(drc\\s+(?:keep\\s+empty|magnify\\s+(?:density|nar|results)|map\\s+text(?:\\s+(?:depth|layer))?|maximum\\s+(?:cell\\s+name\\s+length|results(?:\\s+(?:density|nar))?|unattached\\s+label\\s+warnings|vertex))))\\b"
+                },
+                {
+                    "comment": "specification statement (DRC prefix N-S)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(drc\\s+(?:nar\\s+rdb|print\\s+(?:area|defines|extent|perimeter)|recon\\s+(?:add|remove)\\s+check(?:\\s+by\\s+layer)?|results\\s+database(?:\\s+(?:libname|precision))?|select\\s+check(?:\\s+by\\s+layer)?|summary)))\\b"
+                },
+                {
+                    "comment": "specification statement (DRC prefix T-W)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(drc\\s+(?:terminate\\s+executive\\s+check|tolerance\\s+factor(?:\\s+nar)?|unselect\\s+check(?:\\s+(?:by\\s+layer|if\\s+empty))?|with\\s+text\\s+case\\s+sensitive)))\\b"
+                },
+                {
+                    "comment": "specification statement selection (DRC AUTO ERROR)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*drc\\s+auto\\s+error\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (DRC BOOLEAN NOSNAP45)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*drc\\s+boolean\\s+nosnap45\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (DRC CELL NAME)",
+                    "match": "(?i:(?<=^\\s*drc\\s+cell\\s+name\\s+)(no|yes)\\s+(.*))",
+                    "captures": {
+                        "1": {
+                            "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                        },
+                        "2": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(?:cell\\s+space|xform|all))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (DRC CELL TEXT)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*drc\\s+cell\\s+text\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (DRC CHECK MAP)",
+                    "match": "(?i:(?<=^\\s*drc\\s+check\\s+map\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(gds(?:2|ii)?|oasis|ascii|maximum\\s+(?:results|vertices|pitch)|all|texttag|prefix|append|layername|user(?:\\s+merged)?|pseude|top|combine|properties|prec|index(?:\\s+noview)?|mag[xy]?|a(?:uto)?ref|substitute))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (DRC CHECK TEXT)",
+                    "match": "(?i:(?<=^\\s*drc\\s+check\\s+text\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(comments|all|rfi|none))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (DRC DENSITY)",
+                    "match": "(?i:(?<=^\\s*drc\\s+density\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(?:(intersecting)(?:\\s+(no|yes))?|(file\\s+prefix|inside\\s+of\\s+layer\\s+filter)))\\b",
+                                    "captures": {
+                                        "1": {
+                                            "name": "keyword.other.calibre.svrf.statement"
+                                        },
+                                        "2": {
+                                            "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                                        },
+                                        "3": {
+                                            "name": "keyword.other.calibre.svrf.statement"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (DRC EXCLUDE FALSE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*drc\\s+exclude\\s+false\\s+(?:notch\\s+)?)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (DRC EXTEND TRIVIAL EDGE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*drc\\s+extend\\s+trivial\\s+edge\\s+)(no|yes)\\b)"
+                },
+                {
                     "comment": "specification statement (FLAG)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(flag\\s+(?:acute|angled|nonsimple(?:\\s+(?:path|polygon))?|offgrid|skew)))\\b"
