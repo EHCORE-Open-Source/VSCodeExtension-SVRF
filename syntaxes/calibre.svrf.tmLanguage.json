@@ -152,6 +152,22 @@
                 }
             ]
         },
+        "specification_statement_include": {
+            "patterns": [
+                {
+                    "include": "#comment"
+                },
+                {
+                    "include": "#strings"
+                },
+                {
+                    "include": "#numeric"
+                },
+                {
+                    "include": "#preprocess"
+                }
+            ]
+        },
         "specification_statement": {
             "patterns": [
                 {
@@ -240,6 +256,167 @@
                     "match": "(?i:(?<=^\\s*layout\\s+ignore\\s+layer\\s+)(inverse)\\b)"
                 },
                 {
+                    "comment": "specification statement selection (LAYOUT IGNORE TEXT)",
+                    "match": "(?i:(?<=^\\s*layout\\s+ignore\\s+text\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(database(?:\\s+rules)?|rules|by\\s+layer))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT INPUT EXCEPTION RDB)",
+                    "match": "(?i:(?<=^\\s*layout\\s+input\\s+exception\\s+rdb\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(by\\s+(?:cell|layer|exception)|(?:top|cell)\\s+space|exit\\s+nonempty|mag))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT INPUT EXCEPTION SEVERITY)",
+                    "match": "(?i:(?<=^\\s*layout\\s+input\\s+exception\\s+severity\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(rdb))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT MAGNIFY)",
+                    "match": "(?i:(?<=^\\s*layout\\s+magnify\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(auto))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT MERGE ON INPUT)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+merge\\s+on\\s+input\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT PATH)",
+                    "match": "(?i:(?<=^\\s*layout\\s+path\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(stdin))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT PLACE CELL)",
+                    "match": "(?i:(?<=^\\s*layout\\s+place\\s+cell\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(gds(?:ii|2)?|oasis|empty))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT PRESERVE CASE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+preserve(?:\\s+(?:net|property))?\\s+case\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT PROCESS BOX/NODE RECORD)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+process\\s+(?:box|node)\\s+record\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT PROPERTY AUDIT)",
+                    "match": "(?i:(?<=^\\s*layout\\s+property\\s+audit\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(replace|append))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT RENAME ALL/CLONE/ICV)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+rename\\s+(?:all|clone|icv)\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT RENAME TEXT ORDER)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*layout\\s+rename\\s+text\\s+order\\s+)(sequential|dictionary)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LAYOUT RENAME TEXT)",
+                    "match": "(?i:(?<=^\\s*layout\\s+rename\\s+text\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(by\\s+layer|to|cell\\s+list|database|rules|database\\s+rules))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
                     "comment": "specification statement (MASK)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(mask\\s+svdb\\s+directory))\\b"
@@ -251,16 +428,7 @@
                         "1": {
                             "patterns": [
                                 {
-                                    "include": "#comment"
-                                },
-                                {
-                                    "include": "#strings"
-                                },
-                                {
-                                    "include": "#numeric"
-                                },
-                                {
-                                    "include": "#preprocess"
+                                    "include": "#specification_statement_include"
                                 },
                                 {
                                     "comment": "specification statement keywords (MASK SVDB DIRECTORY)",
