@@ -571,6 +571,159 @@
                     "match": "(?i:(?<=^\\s*drc\\s+with\\s+text\\s+case\\s+sensitive\\s+)(no|yes)\\b)"
                 },
                 {
+                    "comment": "specification statement (ERC)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(erc\\s+(?:cell\\s+name|check\\s+text|keep\\s+empty|maximum\\s+(?:results|vertex)|path\\s+also|pathchk|results\\s+database|(?:un)?select\\s+check|summary\\s+report|tvf)))\\b"
+                },
+                {
+                    "comment": "specification statement selection (ERC CELL NAME)",
+                    "match": "(?i:(?<=^\\s*erc\\s+cell\\s+name\\s+)(no|yes)\\s+(.*))",
+                    "captures": {
+                        "1": {
+                            "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                        },
+                        "2": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(?:cell\\s+space|xform|all))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (ERC CHECK TEXT)",
+                    "match": "(?i:(?<=^\\s*erc\\s+check\\s+text\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(comments|all|rfi|none))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (ERC KEEP EMPTY)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*erc\\s+keep\\s+empty\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (ERC MAXIMUM RESULTS/VERTEX)",
+                    "match": "(?i:(?<=^\\s*erc\\s+maximum\\s+(?:results|vertex)\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(all))\\b",
+                                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (ERC PATH ALSO)",
+                    "match": "(?i:(?<=^\\s*erc\\s+path\\s+also\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(bipolar|capacitor|diode))\\b",
+                                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (ERC PATHCHK)",
+                    "match": "(?i:(?<=^\\s*erc\\s+pathchk\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(polygons(?:\\s+nets)?|nets|by\\s+(?:layer|cell)|flat|ports\\s+also|nofloat|break\\s+filtered|exclude\\s+(?:unused|supply)))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                },
+                                {
+                                    "match": "\\b(?i:(labeled|power|ground))\\b",
+                                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (ERC RESULTS DATABASE)",
+                    "match": "(?i:(?<=^\\s*erc\\s+results\\s+database\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(ascii|pseduo|top))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (ERC SELECT CHECK)",
+                    "match": "(?i:(?<=^\\s*erc\\s+select\\s+check\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(abort\\s+lvs))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (ERC SUMMARY REPORT)",
+                    "match": "(?i:(?<=^\\s*erc\\s+summary\\s+report\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#specification_statement_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(replace|append|hier))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
                     "comment": "specification statement (FLAG)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(flag\\s+(?:acute|angled|nonsimple(?:\\s+(?:path|polygon))?|offgrid|skew)))\\b"
