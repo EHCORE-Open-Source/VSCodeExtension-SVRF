@@ -155,6 +155,26 @@
         "specification_statement": {
             "patterns": [
                 {
+                    "comment": "specification statement (FLAG)",
+                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "^\\s*(?i:(flag\\s+(?:acute|angled|nonsimple(?:\\s+(?:path|polygon))?|offgrid|skew)))\\b"
+                },
+                {
+                    "comment": "specification statement selection (FLAG ACUTE/SKEW)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*flag\\s+(?:acute|skew)\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (FLAG ANGLED/OFFGRID)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*flag\\s+(?:angled|offgrid)\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (FLAG NONSIMPLE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*flag\\s+nonsimple(?:\\s+(?:path|polygon))?\\s+)(no|yes)\\b)"
+                },
+                {
                     "comment": "specification statement (LAYOUT prefix A-C)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(layout\\s+(?:allow\\s+duplicate\\s+cells?|base\\s+(?:cell|layer)|bump2|case|cell\\s+list|clone\\s+(?:by\\s+(?:layer|polygon)|(?:rotated|transformed)\\s+placements)|convert\\s+circle)))\\b"
