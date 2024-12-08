@@ -1445,7 +1445,7 @@
         },
         "layer_operation": {
             "comment": "layer operation equation",
-            "match": "([[:word:]]+)\\s*(=)(?>=[^=])",
+            "match": "([[:word:]]+)\\s*(=)(?=[^=])",
             "captures": {
                 "1": {
                     "name": "variable.other.calibre.svrf.basic"
