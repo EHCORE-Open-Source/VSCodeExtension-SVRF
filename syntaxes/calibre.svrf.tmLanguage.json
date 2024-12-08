@@ -1287,6 +1287,140 @@
                     }
                 },
                 {
+                    "comment": "specification statement selection (LVS BLACK BOX PORT DEPTH)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+black\\s+box\\s+port\\s+depth\\s+)(primary|all)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS BOX CUT EXTENT)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+box\\s+cut\\s+extent\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS BOX)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+box\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(black|layout(?:\\s+only)?|(?:transform\\s+)?source))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS BUILTIN DEVICE PIN SWAP)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+builtin\\s+device\\s+pin\\s+swap\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS BUILTIN MOS NRD_NRS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+builtin\\s+mos\\s+nrd_nrs\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS CELL LIST)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+cell\\s+list\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(layout(?:\\s+source)?|source))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS CELL SUPPLY)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+cell\\s+supply\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS CENTER DEVICE LOCATION/PINS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+center\\s+device\\s+(?:location|pins)\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS CHECK PORT NAMES)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+check\\s+port\\s+names\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS CLONE BY LVS BOX CELLS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+clone\\s+by\\s+lvs\\s+box\\s+cells\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS COMPARE CASE STRICT)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+compare\\s+case\\s+strict\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS COMPARE CASE)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+compare\\s+case\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(no|yes|(?:name|(?:sub)?type|value)s))\\b",
+                                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS CONFIGURE UNUSED FILTER)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+configure\\s+unused\\s+filter\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(layout(?:\\s+source)?|source|devices))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS DEVICE TYPE)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+device\\s+type\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(layout(?:\\s+source)?|source))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                },
+                                {
+                                    "match": "\\b(?i:((?:ldd)?(?:[np]?mos|enh(?:ancement)?|depl(?:etion)?)|bipolar|capacitor|diode|resistor))\\b",
+                                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
                     "comment": "specification statement (SNAP)",
                     "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "^\\s*(?i:(snap\\s+offgrid))\\b"
@@ -1445,7 +1579,7 @@
         },
         "layer_operation": {
             "comment": "layer operation equation",
-            "match": "([[:word:]]+)\\s*(=)(?=[^=])",
+            "match": "\\b([[:word:]]+)\\s*(=)(?=[^=])",
             "captures": {
                 "1": {
                     "name": "variable.other.calibre.svrf.basic"
