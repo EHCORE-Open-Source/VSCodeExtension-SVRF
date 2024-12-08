@@ -1409,6 +1409,18 @@
                                     "include": "#basic_include"
                                 },
                                 {
+                                    "begin": "\\[",
+                                    "end": "\\]",
+                                    "patterns": [
+                                        {
+                                            "include": "#basic_include"
+                                        },
+                                        {
+                                            "include": "#layer_operation"
+                                        }
+                                    ]
+                                },
+                                {
                                     "match": "\\b(?i:(layout(?:\\s+source)?|source))\\b",
                                     "name": "keyword.other.calibre.svrf.statement.keywords"
                                 },
@@ -1419,6 +1431,262 @@
                             ]
                         }
                     }
+                },
+                {
+                    "comment": "specification statement selection (LVS DISCARD PINS BY DEVICE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+discard\\s+pins\\s+by\\s+device\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS DOWNCASE DEVICE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+downcase\\s+device\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS EXACT SUBTYPES)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+exact\\s+subtypes\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS EXECUTE ERC)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+execute\\s+erc\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS EXPAND AMBIGUOUSLY HIGH SHORTED HCELLS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+expand\\s+ambiguously\\s+high\\s+shorted\\s+hcells\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS EXPAND ON ERROR)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+expand\\s+on\\s+error\\s+)(no|yes|soft)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS EXPAND SEED PROMOTIONS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+expand\\s+seed\\s+promotions\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS EXPAND UNBALANCED CELLS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+expand\\s+unbalanced\\s+cells\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS FILTER UNUSED BIPOLAR/CAPACITORS/DIODES/MOS/RESISTORS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+filter\\s+unused\\s+(?:bipolar|capacitors|diodes|mos|resistors)\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS FILTER UNUSED OPTION)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+filter\\s+unused\\s+option\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(property|layout(?:\\s+source)?|source|devices))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                },
+                                {
+                                    "match": "\\b(?i:([b-v]|a[b-k]|eg|[fg][fgy]|ih|inv|kf|mg|np|r[b-g]|y[bc]|z[b-e]))\\b",
+                                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS FILTER)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+filter\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(components|property|short|open|layout(?:\\s+source)?|source|devices))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS FLATTEN INSIDE CELL)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+flatten\\s+inside\\s+cell\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(layout(?:\\s+source)?|source))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                },
+                                {
+                                    "match": "\\b(?i:(no|yes))\\b",
+                                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS GLOBALS ARE PORTS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+globals\\s+are\\s+ports\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS HCELL REPORT)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+hcell\\s+report\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(by\\s+(?:rejection|hcell)|with\\s+expanded))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS IGNORE PORTS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+ignore\\s+ports\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS IGNORE TRIVIAL NAMED PORTS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+ignore\\s+trivial\\s+named\\s+ports\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS INJECT LOGIC)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+inject\\s+logic\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS ISOLATE SHORTS)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+isolate\\s+shorts\\s+)(no|yes)\\s+(.*))",
+                    "captures": {
+                        "1": {
+                            "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                        },
+                        "2": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(?:by\\s+(?:h?cell|layer)|also|no\\s+contacts|unmerged|accumulate|cell|flat))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                },
+                                {
+                                    "match": "\\b(?i:(primary|all))\\b",
+                                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS MAP DEVICE)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+map\\s+device\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(layout(?:\\s+source)?|source))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                },
+                                {
+                                    "match": "\\b(?i:m[denp]|[dcrq])\\s*\\(",
+                                    "name": "keyword.control.calibre.svrf.devices"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS MAXIMUM SHORT RESULTS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+maximum\\s+short\\s+results\\s+)(all)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST ALL TEXTED PINS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+all\\s+texted\\s+pins\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST ALLOW INCONSISTENT MODEL)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+allow\\s+inconsistent\\s+model\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST BOX CONTENTS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+box\\s+contents\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST BUILTIN PROPERTY CONVERSION)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+builtin\\s+property\\s+conversion\\s+)(spice|qd)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST COMMENT CODED PROPERTIES/SUBSTRATE)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+comment\\s+coded\\s+(?:properties|substrate)\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST CONNECT PORT NAMES)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+comment\\s+port\\s+names\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST FILTER DEVICES)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+filter\\s+devices\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST INTERNALLY FLOATING PINS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+internally\\s+floating\\s+pins\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST PROPERTY)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+property\\s+)(?i:m[denp]|[dcrq])\\b)",
+                    "name": "keyword.control.calibre.svrf.devices"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST UNNAMED BOX PINS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+unnamed\\s+box\\s+pins\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NETLIST UNNAMED ISOLATED NETS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+netlist\\s+unnamed\\s+isolated\\s+nets\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NL PIN LOCATIONS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+nl\\s+pin\\s+locations\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS NON USER NAME)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+non\\s+user\\s+name\\s+)(instance|net|port)\\b)"
                 },
                 {
                     "comment": "specification statement (SNAP)",
