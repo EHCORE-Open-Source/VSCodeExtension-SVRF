@@ -75,6 +75,16 @@
                 }
             ]
         },
+        "multiline_delimiter": {
+            "patterns": [
+                {
+                    "comment": "block multiline delimiter",
+                    "name": "markup.underline",
+                    "begin": "\\[",
+                    "end": "\\]"
+                }   
+            ]  
+        },
         "strings": {
             "patterns": [
                 {
@@ -1687,6 +1697,78 @@
                     "comment": "specification statement selection (LVS NON USER NAME)",
                     "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
                     "match": "(?i:(?<=^\\s*lvs\\s+non\\s+user\\s+name\\s+)(instance|net|port)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS OUT OF RANGE EXCLUDE ZERO)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+out\\s+of\\s+range\\s+exclude\\s+zero\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS PATHCHK MAXIMUM RESULTS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+pathchk\\s+maximum\\s+results\\s+)(all)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS PRECISE INTERACTION)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+precise\\s+interaction\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS PREFER NETS)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+prefer\\s+nets\\b)(.*))",
+                    "captures": {
+                        "1": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(filter|layout(?:\\s+source)?|source))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement.keywords"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS PREFER PORT NETS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+prefer\\s+port\\s+nets\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS PRESERVE BOX CELLS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+preserve\\s+box\\s+cells\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS PRESERVE BOX PORTS)",
+                    "match": "(?i:(?<=^\\s*lvs\\s+preserve\\s+box\\s+ports\\s+)(no|yes)\\s+(.*))",
+                    "captures": {
+                        "1": {
+                            "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification"
+                        },
+                        "2": {
+                            "patterns": [
+                                {
+                                    "include": "#basic_include"
+                                },
+                                {
+                                    "match": "\\b(?i:(?:transform\\s+also))\\b",
+                                    "name": "keyword.other.calibre.svrf.statement"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "comment": "specification statement selection (LVS PRESERVE FLOATING TOP NETS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+preserve\\s+floating\\s+top\\s+nets\\s+)(no|yes)\\b)"
+                },
+                {
+                    "comment": "specification statement selection (LVS PRESERVE PARAMETERIZED CELLS)",
+                    "name": "support.function.calibre.svrf.statement strong.calibre.svrf.specification",
+                    "match": "(?i:(?<=^\\s*lvs\\s+preserve\\s+parameterized\\s+cells\\s+)(no|yes)\\b)"
                 },
                 {
                     "comment": "specification statement (SNAP)",
