@@ -22,6 +22,12 @@
             "include": "#mathematics"
         },
         {
+            "include": "#device_recongnition"
+        },
+        {
+            "include": "#device_macro"
+        },
+        {
             "include": "#device_builtin_functions"
         },
         {
@@ -1650,7 +1656,7 @@
                                     "name": "keyword.other.calibre.svrf.statement.keywords"
                                 },
                                 {
-                                    "match": "\\b(?i:m[denp]|[dcrq])\\s*\\(",
+                                    "match": "\\b(?i:(m[denp]|[dcrq]))\\s*\\(",
                                     "name": "keyword.control.calibre.svrf.devices"
                                 }
                             ]
@@ -2109,6 +2115,90 @@
                             "include": "#mathematics"
                         }
                     ]
+                }
+            ]
+        },
+        "device_recongnition": {
+            "patterns": [
+                {
+                    "comment": "device recognition statement",
+                    "match": "^\\s*(?i:(dev(?:ice)?)(?:\\s+((?:m[denp]|[dcrq])\\s*\\(([^\\)]*)\\)|([[:alpha:]_][[:word:]$]*)))?(?:\\s+([[:alpha:]_][[:word:]$]*))?((?:\\s+[[:alpha:]_][[:word:]$]*\\([^\\)]*\\)){2,})?((?:\\s*<[^>]*>)*)?(?:\\s+([^\\[]*))?)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.calibre.svrf.device"
+                        },
+                        "2": {
+                            "name": "keyword.control.calibre.svrf.devices"
+                        },
+                        "3": {
+                            "name": "entity.name.type.calibre.svrf.device"
+                        },
+                        "4": {
+                            "name": "entity.name.type.calibre.svrf.device"
+                        },
+                        "5": {
+                            "name": "variable.name.calibre.svrf.seed"
+                        },
+                        "6": {
+                            "patterns": [
+                                {
+                                    "match": "\\(([[:alpha:]_][[:word:]$]*)\\)",
+                                    "captures": {
+                                        "1": {
+                                            "name": "constant.sha.git-rebase"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "7": {
+                            "patterns": [
+                                {
+                                    "name": "variable.name.svrf.auxlayer",
+                                    "begin": "<",
+                                    "beginCaptures": {
+                                        "0": {
+                                            "name": "constant.regexp.calibre.svrf.auxlayer strong.calibre.svrf.auxlayer"
+                                        }
+                                    },
+                                    "end": ">",
+                                    "endCaptures": {
+                                        "0": {
+                                            "name": "constant.regexp.calibre.svrf.auxlayer strong.calibre.svrf.auxlayer"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "8": {
+                            "patterns": [
+                                {
+                                    "include": "#comment"
+                                },
+                                {
+                                    "include": "#strings"
+                                },
+                                {
+                                    "include": "#numeric"
+                                },
+                                {
+                                    "include": "#preprocess"
+                                },
+                                {
+                                    "match": "\\b(?i:(by\\s+(?:net|shape)|netlist\\s+(?:element|model)|text\\s+(?:model|property)\\s+layer|signature|template))\\b",
+                                    "name": "keyword.other.calibre.svrg.element"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "device_macro": {
+            "patterns": [
+                {
+                    "match": "\\b(?i:([cd]macro))\\b",
+                    "name": "keyword.other.calibre.svrf.marco"
                 }
             ]
         },
