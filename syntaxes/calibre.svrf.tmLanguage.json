@@ -7,6 +7,9 @@
             "include": "#comment"
         },
         {
+            "include": "#multiline_delimiter"
+        },
+        {
             "include": "#strings"
         },
         {
@@ -79,9 +82,35 @@
             "patterns": [
                 {
                     "comment": "block multiline delimiter",
-                    "name": "markup.underline",
                     "begin": "\\[",
-                    "end": "\\]"
+                    "end": "\\]",
+                    "patterns": [
+                        {
+                            "include": "#comment"
+                        },
+                        {
+                            "include": "#strings"
+                        },
+                        {
+                            "include": "#numeric"
+                        },
+                        {
+                            "include": "#preprocess"
+                        },
+                        {
+                            "include": "#mathematics"
+                        },
+                        {
+                            "include": "#device_builtin_functions"
+                        },
+                        {
+                            "include": "#layer_operation"
+                        },
+                        {
+                            "match": "\\b(?i:(property))\\b",
+                            "name": "keyword.other.calibre.svrf.property"
+                        }
+                    ]
                 }   
             ]  
         },
