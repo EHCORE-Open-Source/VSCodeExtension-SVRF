@@ -1870,9 +1870,22 @@
                     "match": "^\\s*(?i:(title))\\b"
                 },
                 {
-                    "comment": "specification statement (TRACE)",
-                    "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification",
-                    "match": "^\\s*(?i:(trace\\s+property))\\b"
+                    "comment": "specification statement (TRACE PROPERTY)",
+                    "match": "^\\s*(?i:(trace\\s+property\\b)(?:\\s+(?:(m[denp]|[dcrq])\\s*\\(([^\\)]*)\\)|([[:alpha:]_][[:word:]$]*)))?)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.calibre.svrf.statement strong.calibre.svrf.specification"
+                        },
+                        "2": {
+                            "name": "keyword.control.calibre.svrf.devices"
+                        },
+                        "3": {
+                            "name": "entity.name.type.calibre.svrf.device"
+                        },
+                        "4": {
+                            "name": "entity.name.type.calibre.svrf.device"
+                        }
+                    }
                 },
                 {
                     "comment": "specification statement (UNIT)",
