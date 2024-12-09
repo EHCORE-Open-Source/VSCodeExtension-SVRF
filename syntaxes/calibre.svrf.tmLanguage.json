@@ -115,6 +115,10 @@
                         {
                             "match": "\\b(?i:(property))\\b",
                             "name": "keyword.other.calibre.svrf.property"
+                        },
+                        {
+                            "match": "\\b(?i:if|else)\\b",
+                            "name": "keyword.control.calibre.svrf.ifelse"
                         }
                     ]
                 }   
