@@ -1,7 +1,7 @@
 {
     "name": "calibre-svrf",
     "displayName": "Calibre SVRF Extension",
-    "description": "MentorGraphics Calibre SVRF extension",
+    "description": "Siemens Calibre SVRF extension",
     "version": "0.0.1",
     "publisher": "ephoton0210-taiwan",
     "private": false,
